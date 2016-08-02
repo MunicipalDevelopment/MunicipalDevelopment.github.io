@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<html><head><title>Routing</title>
+<script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
+<script src="http://cdn-geoweb.s3.amazonaws.com/esri-leaflet/1.0.0-rc.5/esri-leaflet.js"></script>
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+
+
+
+<script src="http://cdn-geoweb.s3.amazonaws.com/esri-leaflet-renderers/v0.0.1-beta.2/esri-leaflet-renderers.js"></script>
+<style>
+
+html, body,  #map {
+        width : 100%;
+        height : 100%;
+     		   }
+
+</style>
+</head>
+<body>
+
+
+<div id="map">
+</div><script>
+var times=1;
+var map = L.map('map', {center: [35.10418, -106.62987],zoom:12});
+
+
+
+var style = {
+    "color": "#0000A0",
+    "weight": 15,
+    "opacity": 0.65
+};
+
+
+
+function getRoute(x,y){
+
+
+
+var url ="http://gisdmd.cabq.gov/dmdview/rest/services/NetCurrNet/NAServer/Route/solve";
+
+
+var params="stops="+x[0]+","+x[1]+";"+y[0]+","+y[1]+"&f=json";
+
+
+
+
+http=new XMLHttpRequest();
+http.open("POST", url, true);
+http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+http.onreadystatechange = function() {//Call a function when the state changes.
+	if(http.readyState == 4 && http.status == 200) {
+		result= JSON.parse(http.responseText);
+		
+	console.log("Total Length: " +result.directions[0].summary.totalLength);
+
+
+		var theRoute = [{
+   		 "type": "LineString",
+    		"coordinates":result.routes.features[0].geometry.paths[0]}];
+
+		var bStyle = {
+  		  "color": "blue",
+			"opacity":1,
+   		 "weight": 25    
+			};
+
+		r=L.geoJson(theRoute,{style:style}).addTo(map);
+		map.fitBounds(r.getBounds());
+		r.bringToFront();
+		
+		for(var x =0;x<result.directions[0].features.length;x++){
+			console.log(result.directions[0].features[x].attributes.text);
+	
+		}//end for
+
+				}
+		
+
+}
+
+http.send(params);
+}
+
+
+map.on("click",function(e){
+if(times==1){
+	var one=L.marker(e.latlng).addTo(map);
+	var onejson=one.toGeoJSON();
+	times=5;
+	first=[onejson.geometry.coordinates[0],onejson.geometry.coordinates[1]];
+}else{
+	var two=L.marker(e.latlng).addTo(map);
+	var twojson=two.toGeoJSON();
+	second=[twojson.geometry.coordinates[0],twojson.geometry.coordinates[1]];
+	getRoute(first,second);
+}
+});
+
+L.esri.basemapLayer("Streets").addTo(map);
+
+
+L.esri.dynamicMapLayer("http://gisdmd.cabq.gov/dmdview/rest/services/NetCurrNet/MapServer").addTo(map);
+
+</script>
+</body></html>
