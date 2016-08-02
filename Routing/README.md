@@ -13,5 +13,6 @@ map.on("click,function(){
         //Modify getRoute() to append them to the params string 
         }")
 ```
+[View the live example](http://municipaldevelopment.github.io/Routing/route.html)
 
 This example uses the Network Service at [NetCurrNet](http://gisdmd.cabq.gov/dmdview/rest/services/NetCurrNet/NAServer/Route/solve). 
