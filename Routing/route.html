@@ -39,7 +39,7 @@ function getRoute(x,y){
 
 
 
-var url ="http://gisdmd.cabq.gov/dmdview/rest/services/NetCurrNet/NAServer/Route/solve";
+var url ="http://gisdmd.cabq.gov/dmdview/rest/services/NetworkRouteServiceFacility/NAServer/Route/solve";
 
 
 var params="stops="+x[0]+","+x[1]+";"+y[0]+","+y[1]+"&f=json";
@@ -102,7 +102,7 @@ if(times==1){
 L.esri.basemapLayer("Streets").addTo(map);
 
 
-L.esri.dynamicMapLayer("http://gisdmd.cabq.gov/dmdview/rest/services/NetCurrNet/MapServer").addTo(map);
+L.esri.dynamicMapLayer("http://gisdmd.cabq.gov/dmdview/rest/services/NetworkRouteServiceFacility/MapServer").addTo(map);
 
 </script>
 </body></html>
