@@ -65,12 +65,12 @@ http.onreadystatechange = function() {//Call a function when the state changes.
     		"coordinates":result.routes.features[0].geometry.paths[0]}];
 
 		var bStyle = {
-  		  "color": "blue",
+  		  "color": "red",
 			"opacity":1,
-   		 "weight": 25    
+   		 "weight": 5    
 			};
 
-		r=L.geoJson(theRoute,{style:style}).addTo(map);
+		r=L.geoJson(theRoute,{style:bStyle}).addTo(map);
 		map.fitBounds(r.getBounds());
 		r.bringToFront();
 		
