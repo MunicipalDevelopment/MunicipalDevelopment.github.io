@@ -15,7 +15,7 @@ Click multiple points on the map then click the Solve button on the upper left. 
 
 # ServiceArea.html
 
-Click multiple points on the map then click the Solve button on the upper left. Modify Params to change distance.
+Click multiple points on the map then click the Solve button on the upper left. Modify defaultBreaks in feet, comma seperated to change distances. Default 1,2 mile.
 
 [View the live example](http://municipaldevelopment.github.io/Routing/ServiceArea.html)
 
