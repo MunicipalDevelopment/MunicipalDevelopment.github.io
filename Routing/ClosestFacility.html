@@ -71,16 +71,16 @@ http.onreadystatechange = function() {//Call a function when the state changes.
 for(var z=0;z<result.routes.features.length;z++){
 
 		var bStyle = {
-  		  "color": "blue",
+  		  "color": "red",
 			"opacity":1,
-   		 "weight": 25    
+   		 "weight": 5    
 			};
 
 		var theFacilities = [{
    		 "type": "LineString",
     		"coordinates":result.routes.features[z].geometry.paths[0]}];
 		
-		L.geoJson(theFacilities,{style:style}).addTo(map);
+		L.geoJson(theFacilities,{style:bStyle}).addTo(map);
 		
 		
 
