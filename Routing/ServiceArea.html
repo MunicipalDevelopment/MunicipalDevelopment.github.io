@@ -70,14 +70,14 @@ http.onreadystatechange = function() {//Call a function when the state changes.
 		var bStyle = {
   		  "color": "blue",
 			"opacity":1,
-   		 "weight": 25    
+   		 "weight": 2    
 			};
 
 		var theArea = [{
    		 "type": "Polygon",
     		"coordinates":[result.saPolygons.features[z].geometry.rings[0]]}];
 		
-		L.geoJson(theArea,{style:style}).addTo(map);
+		L.geoJson(theArea,{style:bStyle}).addTo(map);
 		
 		
 
