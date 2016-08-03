@@ -22,13 +22,10 @@ Click multiple points on the map then click the Solve button on the upper left. 
 
 # ServiceAreaUserDefined.html
 
-Click multiple points on the map then click the Solve button on the upper left. Modify defaultBreaks in feet, comma seperated to change distances. Default 1,2 mile.
+Click multiple points on the map, enter comma seperated values in box (5280,10560) then click the Solve button on the upper left. 
 
-[View the live example](# ServiceArea.html
+[View the live example](http://municipaldevelopment.github.io/Routing/ServiceAreaUserDefined.html)
 
-Click multiple points on the map, enter comma seperated distances in feet (5280,10560) then click the Solve button on the upper left.
-
-[View the live example](http://municipaldevelopment.github.io/Routing/ServiceArea.html))
 
 
 # ClosestFacility.html
