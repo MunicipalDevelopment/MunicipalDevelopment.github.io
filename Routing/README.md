@@ -19,6 +19,18 @@ Click multiple points on the map then click the Solve button on the upper left. 
 
 [View the live example](http://municipaldevelopment.github.io/Routing/ServiceArea.html)
 
+
+# ServiceAreaUserDefined.html
+
+Click multiple points on the map then click the Solve button on the upper left. Modify defaultBreaks in feet, comma seperated to change distances. Default 1,2 mile.
+
+[View the live example](# ServiceArea.html
+
+Click multiple points on the map, enter comma seperated distances in feet (5280,10560) then click the Solve button on the upper left.
+
+[View the live example](http://municipaldevelopment.github.io/Routing/ServiceArea.html))
+
+
 # ClosestFacility.html
 
 Red dots are facilities. Click multiple points on the map then click the Solve button on the upper left. Map will display routes to the closest facility for each click.
