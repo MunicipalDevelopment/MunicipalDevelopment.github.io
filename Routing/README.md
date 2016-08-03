@@ -14,4 +14,4 @@ Click multiple points on the map then click the Solve button on the upper left. 
 
 
 
-These examples use the Network Service at [NetCurrNet](http://gisdmd.cabq.gov/dmdview/rest/services/NetCurrNet/NAServer/Route/solve). 
+These examples use the Network Service at [NetCurrNet](http://gisdmd.cabq.gov/dmdview/rest/services/NetworkRouteServiceFacility/NAServer). 
