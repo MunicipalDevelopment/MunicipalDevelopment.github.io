@@ -35,4 +35,9 @@ Red dots are facilities. Click multiple points on the map then click the Solve b
 [View the live example](http://municipaldevelopment.github.io/Routing/ClosestFacility.html)
 
 
+
+# ClosestFacilityFeatures.html
+The map will load Albuquerque Voting Locations. It will then show you the route to the nearest voting facility.
+[View the live example](http://municipaldevelopment.github.io/Routing/ClosestFacilityFeatures.html)
+
 These examples use the Network Service at [NetCurrNet](http://gisdmd.cabq.gov/dmdview/rest/services/NetworkRouteServiceFacility/NAServer). 
